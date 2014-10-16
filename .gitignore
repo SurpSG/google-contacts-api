@@ -1,0 +1,8 @@
+.idea/
+.idea/copyright/
+.idea/libraries/
+.idea/scopes/
+target/
+webstartup20.iml
+*.bat
+*.csv
