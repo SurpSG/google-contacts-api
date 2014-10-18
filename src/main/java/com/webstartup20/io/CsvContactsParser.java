@@ -23,6 +23,7 @@ public class CsvContactsParser {
 
     private Map<Integer, String> header;
     private List<ContactEntry> contacts;
+    private List<ContactEntry> invalidContacts;
 
     public CsvContactsParser(String filePath){
         this(new File(filePath));
@@ -30,6 +31,7 @@ public class CsvContactsParser {
 
     public CsvContactsParser(File file){
         contacts = new ArrayList<>();
+        invalidContacts = new ArrayList<>();
         header = new HashMap<>();
         readContacts(file);
     }
@@ -114,6 +116,7 @@ public class CsvContactsParser {
                 if(contactEntry.getEmailAddresses().size() > 0){
                     contacts.add(contactEntry);
                 }else{
+                    invalidContacts.add(contactEntry);
                     System.err.format("Contact '%s' was skipped. No correct emails for this record",contactEntry.getName().getFullName().getValue());
                 }
             }
@@ -171,6 +174,9 @@ public class CsvContactsParser {
 
     public List<ContactEntry> getContacts(){
         return contacts;
+    }
+    public List<ContactEntry> getInvalidContacts(){
+        return invalidContacts;
     }
 
     private boolean validate(String email) {

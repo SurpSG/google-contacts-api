@@ -6,19 +6,22 @@ import java.util.Arrays;
 public class LoginPassReader {
 
     public static String readPassword(){
-        Console console = System.console();
-        char[] chars = console.readPassword("Password: ");
-        String result = "";
-        for (Character charr:chars){
-            result += charr;
-        }
-        return result;
+//
+//  Console console = System.console();
+//        char[] chars = console.readPassword("Password: ");
+//        String result = "";
+//        for (Character charr:chars){
+//            result += charr;
+//        }
+//        return result;
+        return "Ss73273833";
     }
 
     public static String readLogin()
     {
         Console console = System.console();
-        return console.readLine("Username: ");
+        return "sergii2708@gmail.com";
+//        return console.readLine("Username: ");
     }
 
 }

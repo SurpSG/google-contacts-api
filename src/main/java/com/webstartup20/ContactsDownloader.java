@@ -65,6 +65,8 @@ public class ContactsDownloader {
                     List<ContactEntry> contactEntries = c.getContacts();
                     contactsDownloader.importContacts(contactEntries);
                     LoggingUtil.printContactEntries(contactEntries);
+                    System.out.println("Success: "+contactEntries.size());
+                    System.out.println("Failed: "+c.getInvalidContacts().size());
                     break;
                 case EXIT:
                     System.exit(0);
@@ -148,14 +150,10 @@ public class ContactsDownloader {
             } catch (IOException e) {
                 System.err.println("Failed to import contacts, please check your internet connection");
             } catch (ServiceException e) {
-                System.err.println("Failed to import contacts, please check the input parameters");
-                e.printStackTrace();
-                System.out.println(e.getMessage());
+                System.err.println("Failed to import contacts, please check input parameters");
             }
         }
     }
-
-
 
     public boolean initContactsService(String userName, String password) {
         myService = new ContactsService(APP_NAME);
