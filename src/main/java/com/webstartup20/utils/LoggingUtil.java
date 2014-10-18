@@ -40,7 +40,6 @@ public class LoggingUtil {
             System.out.println();
             i++;
         }
-        System.out.println("Total records: "+i+"\n");
     }
 
     public static void printMessage(String message){

@@ -65,8 +65,10 @@ public class ContactsDownloader {
                     List<ContactEntry> contactEntries = c.getContacts();
                     contactsDownloader.importContacts(contactEntries);
                     LoggingUtil.printContactEntries(contactEntries);
+                    int failed = c.getInvalidContacts().size();
+                    System.out.println("Total: "+(contactEntries.size()+failed));
                     System.out.println("Success: "+contactEntries.size());
-                    System.out.println("Failed: "+c.getInvalidContacts().size());
+                    System.out.println("Failed: "+failed);
                     break;
                 case EXIT:
                     System.exit(0);
