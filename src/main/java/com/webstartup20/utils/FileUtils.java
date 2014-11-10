@@ -45,5 +45,10 @@ public class FileUtils {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(PATTERN);
         return simpleDateFormat.format(date);
     }
+
+    public static void showFileSize(String filename) {
+        File file = new File(filename);
+        System.out.println("The size of the file " + filename + " " + file.length()+ " bytes");
+    }
 }
 

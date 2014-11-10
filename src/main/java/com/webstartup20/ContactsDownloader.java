@@ -132,6 +132,7 @@ public class ContactsDownloader {
 
         String title = FileUtils.getFileNameTimeStamp() + "_" + resultFeed.getTitle().getPlainText();
         FileUtils.writeToFile(data, title + CSV);
+        FileUtils.showFileSize(title+CSV);
     }
 
     public List<Map<String, List<String>>> getContacts() {
