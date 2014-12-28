@@ -2,7 +2,7 @@ google-contacts-api
 ===================
 
 main menu:
-1. "export all contacts to csv" - export all contacts from google contacts to csv file
+1. "export all contacts to csv" - export all contacts from google contacts to csv file\n
 2. "import contacts from csv" - download contacts csv file to google contacts
 3. "exit" - exit the program
 
